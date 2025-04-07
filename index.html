@@ -3,22 +3,17 @@
   <!-- Fondo azul cielo -->
   <a-sky color="#87CEEB"></a-sky>
 
-  <!-- Modelo 3D -->
-  <a-assets>
-    <a-asset-item id="modelo" src="modelo.glb"></a-asset-item>
-  </a-assets>
-
-  <!-- Entidad del modelo con una posición más alejada -->
-  <a-entity gltf-model="#modelo" position="0 0 -5" scale="1 1 1"></a-entity>
+  <!-- Caja para probar -->
+  <a-box position="0 1 -5" scale="1 1 1" color="#FF5733"></a-box>
 
   <!-- Cámara con posición más alejada -->
-  <a-entity position="0 1.6 -7"> <!-- Cámara movida más lejos (en el eje Z) -->
+  <a-entity position="0 1.6 -7">
     <a-camera wasd-controls-enabled="true" look-controls="true"></a-camera>
   </a-entity>
 
   <!-- Luces -->
-  <a-light type="ambient" color="#ffffff" intensity="0.5"></a-light> <!-- Luz ambiental -->
-  <a-light type="directional" color="#ffffff" intensity="1" position="5 10 -5"></a-light> <!-- Luz direccional -->
-  <a-light type="point" color="#ff0000" intensity="1.5" position="0 5 0" castShadow="true"></a-light> <!-- Luz puntual -->
+  <a-light type="ambient" color="#ffffff" intensity="0.5"></a-light>
+  <a-light type="directional" color="#ffffff" intensity="1" position="5 10 -5"></a-light>
+  <a-light type="point" color="#ff0000" intensity="1.5" position="0 5 0" castShadow="true"></a-light>
 
 </a-scene>
