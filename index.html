@@ -1,20 +1,33 @@
-<a-scene background="color: #000000"> <!-- Fondo negro, que simula el espacio -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Mi modelo 3D con fondo</title>
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene background="color: #87CEEB"> <!-- Fondo azul claro -->
+      
+      <!-- Fondo con imagen -->
+      <a-sky src="url('ruta/a/tu/fondo360.jpg')"></a-sky>
 
-  <!-- Modelo 3D -->
-  <a-assets>
-    <a-asset-item id="modelo" src="modelo.glb"></a-asset-item>
-  </a-assets>
+      <!-- Modelo 3D -->
+      <a-assets>
+        <a-asset-item id="modelo" src="modelo.glb"></a-asset-item>
+      </a-assets>
 
-  <a-entity gltf-model="#modelo" position="0 0 -3" scale="1 1 1"></a-entity>
+      <a-entity gltf-model="#modelo" position="0 0 -3" scale="1 1 1"></a-entity>
 
-  <!-- Cámara -->
-  <a-entity position="0 1.6 0">
-    <a-camera wasd-controls-enabled="true" look-controls="true"></a-camera>
-  </a-entity>
+      <!-- Cámara -->
+      <a-entity position="0 1.6 0">
+        <a-camera wasd-controls-enabled="true" look-controls="true"></a-camera>
+      </a-entity>
 
-  <!-- Luces -->
-  <a-light type="ambient" color="#ffffff" intensity="0.2"></a-light>
-  <a-light type="directional" color="#ffffff" intensity="0.5" position="5 10 -5"></a-light>
-  <a-light type="point" color="#ff0000" intensity="1.5" position="0 5 0" castShadow="true"></a-light>
+      <!-- Luces -->
+      <a-light type="ambient" color="#ffffff" intensity="0.8"></a-light>
+      <a-light type="directional" color="#ffffff" intensity="1" position="5 10 -5"></a-light>
+      <a-light type="point" color="#ff0000" intensity="1.5" position="0 5 0" castShadow="true"></a-light>
 
-  </a-scene>
+    </a-scene>
+  </body>
+</html>
