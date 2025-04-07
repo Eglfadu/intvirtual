@@ -1,4 +1,4 @@
-<a-scene background="color: #1e2a47"> <!-- Fondo azul oscuro -->
+<a-scene background="color: #87CEEB"> <!-- Fondo azul cielo -->
 
   <!-- Modelo 3D -->
   <a-assets>
@@ -7,8 +7,8 @@
 
   <a-entity gltf-model="#modelo" position="0 0 -3" scale="1 1 1"></a-entity>
 
-  <!-- Cámara -->
-  <a-entity position="0 1.6 0">
+  <!-- Cámara con posición más alejada -->
+  <a-entity position="0 1.6 -5"> <!-- Cámara movida más lejos (en el eje Z) -->
     <a-camera wasd-controls-enabled="true" look-controls="true"></a-camera>
   </a-entity>
 
