@@ -1,37 +1,24 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <title>Mi modelo 3D</title>
-    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
-  </head>
-  <body>
-    <a-scene>
-      <!-- Modelo 3D -->
-      <a-assets>
-        <a-asset-item id="modelo" src="modelo.glb"></a-asset-item>
-      </a-assets>
+<a-scene background="color: #000000"> <!-- Fondo negro, que simula el espacio -->
 
-      <a-entity gltf-model="#modelo" position="0 0 -3" scale="1 1 1"></a-entity>
+  <!-- Modelo 3D -->
+  <a-assets>
+    <a-asset-item id="modelo" src="modelo.glb"></a-asset-item>
+  </a-assets>
 
-      <!-- Cámara -->
-      <a-entity position="0 1.6 0">
-        <a-camera wasd-controls-enabled="true" look-controls="true"></a-camera>
-      </a-entity>
+  <a-entity gltf-model="#modelo" position="0 0 -3" scale="1 1 1"></a-entity>
 
-      <!-- Luces -->
-      <!-- Luz ambiental: proporciona luz general en toda la escena -->
-      <a-light type="ambient" color="#ffffff" intensity="0.8"></a-light>
+  <!-- Cámara -->
+  <a-entity position="0 1.6 0">
+    <a-camera wasd-controls-enabled="true" look-controls="true"></a-camera>
+  </a-entity>
 
-      <!-- Luz direccional: simula la luz del sol y proyecta sombras -->
-      <a-light type="directional" color="#ffffff" intensity="1" position="5 10 -5"></a-light>
+  <!-- Luces -->
+  <a-light type="ambient" color="#ffffff" intensity="0.2"></a-light>
+  <a-light type="directional" color="#ffffff" intensity="0.5" position="5 10 -5"></a-light>
+  <a-light type="point" color="#ff0000" intensity="1.5" position="0 5 0" castShadow="true"></a-light>
 
-      <!-- Luz puntual: simula una bombilla -->
-      <a-light type="point" color="#ff0000" intensity="1.5" position="0 5 0" castShadow="true"></a-light>
+  <!-- Fondo de estrellas (opcional) -->
+  <a-sky src="url('ruta/a/tu/fondo_estrellas.jpg')"></a-sky> <!-- Fondo con textura de estrellas -->
 
-      <!-- Luz de foco (Spotlight) -->
-      <a-light type="spot" color="#00ff00" intensity="1" position="0 5 -5" angle="30" castShadow="true"></a-light>
+</a-scene>
 
-    </a-scene>
-  </body>
-</html>
