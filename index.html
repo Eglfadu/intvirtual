@@ -17,7 +17,7 @@
       <a-sky src="#fondo"></a-sky>
 
       <!-- Modelo 3D -->
-      <a-entity id="mimodelo" gltf-model="#modelo" position="0 0 1" scale="1 1 1"></a-entity>
+      <a-entity gltf-model="#modelo" position="0 0 1" scale="1 1 1"></a-entity>
 
       <!-- Cámara -->
       <a-entity position="0 1.6 0">
@@ -25,11 +25,15 @@
       </a-entity>
 
       <!-- Luces -->
-      <!-- Luz ambiental más tenue -->
-      <a-light type="ambient" color="#555555" intensity="0.4"></a-light>
+      <!-- Luz ambiental tenue -->
+      <a-light type="ambient" color="#888" intensity="0.5"></a-light>
 
-      <!-- Luz puntual rosa para destacar brillo -->
-      <a-light type="point" intensity="2" position="1 2 1" color="#FF69B4"></a-light>
+      <!-- Luz direccional -->
+      <a-light type="directional" position="-1 1 0" intensity="0.6" color="#FFF"></a-light>
+
+      <!-- Luz puntual -->
+      <a-light type="point" position="2 3 4" intensity="0.9" color="#FFF"></a-light>
     </a-scene>
   </body>
 </html>
+
