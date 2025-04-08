@@ -1,22 +1,28 @@
-<a-scene background="color: #111122">
-  <a-assets>
-    <a-asset-item id="modelo" src="modelo.glb"></a-asset-item>
-  </a-assets>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Mi modelo 3D</title>
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <!-- Cargar el modelo 3D -->
+      <a-assets>
+        <a-asset-item id="modelo" src="modelo.glb"></a-asset-item>
+      </a-assets>
 
-  <!-- Imagen de fondo (opcional) -->
-  <a-sky color="#111122"></a-sky>
+      <!-- Entidad con el modelo y material configurado -->
+      <a-entity gltf-model="#modelo" position="0 0 -3" scale="1 1 1"
+                material="metalness: 1; roughness: 0.2;"></a-entity>
 
-  <!-- Tu modelo con emisión -->
-  <a-entity gltf-model="#modelo" position="0 1 -3" scale="1 1 1"></a-entity>
-
-  <!-- Luces para destacar el brillo -->
-  <a-light type="ambient" color="#8888ff" intensity="1"></a-light>
-  <a-light type="point" position="0 2 2" intensity="2" color="#ffffff"></a-light>
-
-  <!-- Cámara -->
-  <a-entity position="0 1.6 0">
-    <a-camera wasd-controls look-controls></a-camera>
-  </a-entity>
-</a-scene>
-
+      <!-- Cámara y luz -->
+      <a-entity position="0 1.0 0">
+        <a-camera wasd-controls-enabled="true" look-controls="true"></a-camera>
+      </a-entity>
+      <a-light type="ambient" color="#ffffff"></a-light>
+      <a-light type="directional" position="2 4 -3" intensity="0.9"></a-light>
+    </a-scene>
+  </body>
+</html>
 
