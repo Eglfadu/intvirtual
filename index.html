@@ -13,26 +13,36 @@
         <img id="fondo" src="fondo.jpg" />
       </a-assets>
 
-      <!-- Imagen de fondo -->
+      <!-- Fondo -->
       <a-sky src="#fondo"></a-sky>
 
       <!-- Modelo 3D -->
-      <a-entity gltf-model="#modelo" position="0 0 1" scale="1 1 1"></a-entity>
+      <a-entity 
+        gltf-model="#modelo" 
+        position="0 0 1" 
+        scale="1 1 1"
+        material="metalness: 1; roughness: 0.2;">
+      </a-entity>
 
       <!-- Cámara -->
       <a-entity position="0 1.6 0">
         <a-camera wasd-controls-enabled="true" look-controls="true"></a-camera>
       </a-entity>
 
-      <!-- Luces -->
-      <!-- Luz ambiental tenue -->
-      <a-light type="ambient" color="#888" intensity="0.5"></a-light>
+      <!-- Luces envolventes -->
+      <a-light type="ambient" color="#FFFFFF" intensity="0.8"></a-light>
 
-      <!-- Luz direccional -->
-      <a-light type="directional" position="-1 1 0" intensity="0.6" color="#FFF"></a-light>
+      <!-- Luz frontal -->
+      <a-light type="directional" color="#208E8A" intensity="1.0" position="0 3 3"></a-light>
+      <!-- Luz trasera -->
+      <a-light type="directional" color="#208E8A" intensity="0.6" position="0 2 -3"></a-light>
+      <!-- Luz lateral derecha -->
+      <a-light type="directional" color="#208E8A" intensity="0.5" position="3 2 0"></a-light>
+      <!-- Luz lateral izquierda -->
+      <a-light type="directional" color="#208E8A" intensity="0.5" position="-3 2 0"></a-light>
 
-      <!-- Luz puntual -->
-      <a-light type="point" position="2 3 4" intensity="0.9" color="#FFF"></a-light>
+      <!-- Luz puntual central -->
+      <a-light type="point" position="0 2 1" intensity="1.2" color="#ffffff"></a-light>
     </a-scene>
   </body>
 </html>
