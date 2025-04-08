@@ -10,25 +10,28 @@
       <!-- Cargar recursos -->
       <a-assets>
         <a-asset-item id="modelo" src="modelo.glb"></a-asset-item>
+        <!-- Fondo de color oscuro (puedes cambiar la imagen si lo prefieres) -->
         <img id="fondo" src="fondo.jpg" /> <!-- Asegúrate de que 'fondo.jpg' esté en la misma carpeta o indica el path correcto -->
       </a-assets>
 
       <!-- Imagen de fondo -->
-      <a-sky src="#fondo"></a-sky>
+      <a-sky src="#fondo" color="#111111"></a-sky> <!-- Fondo oscuro para resaltar los colores del modelo -->
 
-      <!-- Modelo 3D, ajustando la rotación para que no esté de espaldas -->
-      <a-entity gltf-model="#modelo" position="0 0 -3" scale="1 1 1" rotation="0 180 0" material="metalness: 1; roughness: 0.2;"></a-entity>
+      <!-- Modelo 3D con materiales metálicos -->
+      <a-entity gltf-model="#modelo" position="0 0 -3" scale="1 1 1" rotation="0 180 0" 
+                material="metalness: 1; roughness: 0.2;"></a-entity>
 
       <!-- Cámara -->
       <a-entity position="0 1.6 0">
         <a-camera wasd-controls-enabled="true" look-controls="true"></a-camera>
       </a-entity>
 
-      <!-- Ajustar la luz ambiental para oscurecer un poco -->
-      <a-light type="ambient" color="#ffffff" intensity="0.3"></a-light>
+      <!-- Ajustar la luz ambiental para oscurecer el ambiente y hacer que los colores metálicos resalten -->
+      <a-light type="ambient" color="#ffffff" intensity="0.2"></a-light> <!-- Luz tenue en todo el entorno -->
 
-      <!-- Luz direccional suave desde la parte superior -->
-      <a-light type="directional" position="2 4 -3" intensity="0.6"></a-light>
+      <!-- Luz direccional desde la parte superior para resaltar las superficies metálicas -->
+      <a-light type="directional" position="2 4 -3" intensity="1.2" color="#ffffff"></a-light> <!-- Luz suave para resaltar el modelo -->
     </a-scene>
   </body>
 </html>
+
