@@ -6,7 +6,7 @@
     <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
   </head>
   <body>
-    <a-scene>
+    <a-scene shadow="type: pcfsoft">
       <!-- Cargar el modelo 3D -->
       <a-assets>
         <a-asset-item id="modelo" src="modelo.glb"></a-asset-item>
@@ -17,18 +17,22 @@
                 position="0 0 -3" 
                 rotation="0 180 0" 
                 scale="1 1 1" 
-                material="metalness: 1; roughness: 0.2;"></a-entity>
+                material="metalness: 1; roughness: 0.2;" 
+                cast-shadow="true" receive-shadow="true"></a-entity>
 
-      <!-- Cámara y luz -->
+      <!-- Cámara -->
       <a-entity position="0 1.0 0">
         <a-camera wasd-controls-enabled="true" look-controls="true"></a-camera>
       </a-entity>
       
       <!-- Luz ambiental -->
-      <a-light type="ambient" color="#ffffff"></a-light>
+      <a-light type="ambient" color="#ffffff" intensity="0.2"></a-light>
 
       <!-- Luz direccional desde abajo -->
-      <a-light type="directional" position="0 -5 -3" intensity="0.9" target="#modelo"></a-light>
+      <a-light type="directional" position="0 -5 -3" intensity="1" target="#modelo" cast-shadow="true"></a-light>
+
+      <!-- Luz puntual para iluminación adicional -->
+      <a-light type="point" position="0 3 0" color="#208E8A" intensity="0.8" cast-shadow="true"></a-light>
     </a-scene>
   </body>
 </html>
