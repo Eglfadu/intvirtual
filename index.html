@@ -18,9 +18,12 @@
       <a-sky src="#fondo"></a-sky>
 
       <!-- Modelo 3D -->
-      <a-entity gltf-model="#modelo" position="0 0 1" scale="1 1 1"
-                material="metalness: 1; roughness: 0.2;"></a-entity>
-
+      <a-entity 
+  gltf-model="#modelo" 
+  position="0 0 1" 
+  scale="1 1 1" 
+  material="color: #ff69b4; metalness: 1; roughness: 0.2;">
+</a-entity>     
       <!-- Cámara -->
       <a-entity position="0 1.6 0">
         <a-camera wasd-controls-enabled="true" look-controls="true"></a-camera>
